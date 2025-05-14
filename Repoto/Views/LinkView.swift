@@ -15,34 +15,45 @@ struct LinkView: View {
     let reloc = UserDefaults.standard.integer(forKey: "reloc")
         
     var body: some View {
-        VStack(alignment: .leading) {
-            HeaderView(loc: loc)
-                .padding(.bottom, 20)
+        ZStack {
+            VStack(alignment: .leading) {
+                HeaderView(loc: loc, reloc: reloc)
+                    .padding(.bottom, 20)
+                
+                Image("toilet_\(reloc)")
+                    .resizable()
+                    .scaledToFit()
+                    .edgesIgnoringSafeArea(.all)
+                    .padding(.horizontal, 16)
+                    .padding(.leading, -16)
+                
+                ReportContentButtonsView(reloc: reloc, selectedContent: $selectedContent)
+                
+                Spacer()
+                Spacer()
+                
+                ReportButtonView(selectedContent: $selectedContent, loc: loc, reloc: reloc)
+                    .padding(.leading, -16)
+                
+                Spacer()
+            }
+            .padding(.leading, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
             
-            Image("toilet_\(reloc)")
-                .resizable()
-                .scaledToFit()
-                .edgesIgnoringSafeArea(.all)
-                .padding(.horizontal, 16)
-                .padding(.leading, -16)
-            
-            ReportContentButtonsView(reloc: reloc, selectedContent: $selectedContent)
-            
-            Spacer()
-            Spacer()
-            
-            ReportButtonView(selectedContent: $selectedContent, loc: loc, reloc: reloc)
-                .padding(.leading, -16)
-            
-            Spacer()
+            GeometryReader { geometry in
+                if manager.isShowingAlert {
+                    ExitAlertView()
+                        .frame(height: geometry.size.height * 1.2)
+                        .padding(.top, -geometry.size.height * 0.15)
+                }
+            }
         }
-        .padding(.leading, 16)
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
 private struct HeaderView: View {
     let loc: Int?
+    let reloc: Int?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -56,7 +67,7 @@ private struct HeaderView: View {
                 .padding(.leading, -16)
                 .padding(.bottom, 16)
             
-            Text("위치")
+            Text("신고 위치 : \(numberTitle[reloc!] ?? "")")
                 .font(.system(size: 22, weight: .bold))
                 .padding(.bottom, 10)
             

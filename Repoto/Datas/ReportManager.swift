@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
-import MessageUI
 
 class ReportManager: ObservableObject {
     @Published var selectedLocation: Int?
     @Published var selectedNumber: Int = 0
     @Published var reportContent: String?
     @Published var source: LocationSource = .inApp
+    
+    @Published var didReturnFromTeams: Bool = false
+    @Published var didReturnFromMail: Bool = false
+    @Published var isShowingAlert: Bool = false
     
     let defaults = UserDefaults.standard
     
@@ -34,14 +37,17 @@ class ReportManager: ObservableObject {
         defaults.set(reportLocationID, forKey: "reloc")
     }
     
-    func setReportContent(_ content: String?) {
-        defaults.set(content, forKey: "content")
+    func resetDatas() {
+        selectedLocation = nil
+        selectedNumber = 0
+        reportContent = nil
     }
     
     func urlHandler(_ url: URL) {
         let parameters = url.extractQueryParameters()
         let loc = parameters["loc"].flatMap{ Int($0) }
         let reloc = Int(parameters["reloc"] ?? "") ?? 0
+        
         
         source = .link
         setLocation(loc ?? 0)
@@ -51,23 +57,32 @@ class ReportManager: ObservableObject {
     func openTeamsChat() {
         let email = "jelly09@postech.ac.kr"
         var message: String
-        
+
         switch source {
         case .inApp:
             message = "\(reportIcon[reportContent]!) \(locationTitle[selectedLocation]!) \(numberTitle[selectedNumber]!)\(reportTitle[reportContent]!)"
         case .link:
-            message = "\(locationIcon[loc]!)\(numberIcon[reloc]!)\(reportIcon[reportContent]!)\n\(locationTitle[loc]!) \(numberTitle[reloc]!)\(reportTitle[reportContent]!)"
+            message = "\(reportIcon[reportContent]!) \(locationTitle[loc]!) \(numberTitle[reloc]!)\(reportTitle[reportContent]!)"
         @unknown default:
             message = "Unknown Error"
         }
-        
+
         let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let urlString = "https://teams.microsoft.com/l/chat/0/0?users=\(email)&message=\(encodedMessage)"
-        
+
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
+            UIApplication.shared.open(url) { success in
+                if success {
+                    DispatchQueue.main.async {
+                        self.didReturnFromTeams = true
+                        self.isShowingAlert = true
+                    }
+                } else {
+                    print("Teams 앱을 열 수 없습니다.")
+                }
+            }
         } else {
-            print("teams앱 오류")
+            print("Teams 앱 오류")
         }
     }
 }

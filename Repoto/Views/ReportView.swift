@@ -11,25 +11,35 @@ struct ReportView: View {
     @EnvironmentObject var manager: ReportManager
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HeaderView()
-                .padding(.bottom, 20)
+        ZStack {
+            VStack(alignment: .leading) {
+                HeaderView()
+                    .padding(.bottom, 20)
+                
+                ToiletMapView()
+                    .padding(.leading, -16)
+                
+                ReportContentButtonsView()
+                
+                Spacer()
+                Spacer()
+                
+                ReportButtonView()
+                    .padding(.leading, -16)
+                
+                Spacer()
+            }
+            .padding(.leading, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
             
-            ToiletMapView()
-                .padding(.leading, -16)
-            
-            ReportContentButtonsView()
-            
-            Spacer()
-            Spacer()
-            
-            ReportButtonView()
-                .padding(.leading, -16)
-            
-            Spacer()
+            GeometryReader { geometry in
+                if manager.isShowingAlert {
+                    ExitAlertView()
+                        .frame(height: geometry.size.height * 1.2)
+                        .padding(.top, -geometry.size.height * 0.15)
+                }
+            }
         }
-        .padding(.leading, 16)
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -90,6 +100,7 @@ private struct ReportContentButtonsView: View {
 
 private struct ReportButtonView: View {
     @EnvironmentObject var manager: ReportManager
+    
     @State private var isPresented = false
     
     private var isButtonEnabled: Bool {
@@ -141,10 +152,10 @@ private struct ReportButtonView: View {
                     .padding(.trailing, 16)
             }
             .disabled(!isButtonEnabled)
-            .sheet(isPresented: $isPresented) {
-                MailCompose()
-                    .environmentObject(manager)
-            }
+        }
+        .sheet(isPresented: $isPresented) {
+            MailCompose()
+                .environmentObject(manager)
         }
     }
 }

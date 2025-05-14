@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
+		8418C1F52D52463D0026F59E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8458C31C2D39436100382227 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8418C1E72D52463C0026F59E;
+			remoteInfo = RepotoClip;
+		};
 		8458C3372D39436300382227 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8458C31C2D39436100382227 /* Project object */;
@@ -37,12 +44,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8458C3242D39436100382227 /* Repoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8458C3362D39436300382227 /* RepotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8458C3402D39436300382227 /* RepotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F107102DD0E01800B62839 /* RepotoClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepotoClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F107112DD0E01800B62839 /* Repoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F107122DD0E01800B62839 /* RepotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F107132DD0E01800B62839 /* RepotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8418C1F82D52463D0026F59E /* Exceptions for "RepotoClip" folder in "RepotoClip" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8418C1E72D52463C0026F59E /* RepotoClip */;
+		};
+		8418C1FD2D5247730026F59E /* Exceptions for "Repoto" folder in "RepotoClip" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				Datas/MessageCompose.swift,
+				Datas/ReportManager.swift,
+				Enums/LocationSource.swift,
+				"Extensions/Notification+Extension.swift",
+				"Extensions/URL+Extension.swift",
+				Views/ExitAlertView.swift,
+				Views/MainView.swift,
+				Views/ReportView.swift,
+				Views/test.swift,
+				Views/ToiletMapView.swift,
+			);
+			target = 8418C1E72D52463C0026F59E /* RepotoClip */;
+		};
 		84E32F0B2D3E81FE00481307 /* Exceptions for "Repoto" folder in "Repoto" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -53,10 +85,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8418C1E92D52463C0026F59E /* RepotoClip */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8418C1F82D52463D0026F59E /* Exceptions for "RepotoClip" folder in "RepotoClip" target */,
+			);
+			path = RepotoClip;
+			sourceTree = "<group>";
+		};
 		8458C3262D39436100382227 /* Repoto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				84E32F0B2D3E81FE00481307 /* Exceptions for "Repoto" folder in "Repoto" target */,
+				8418C1FD2D5247730026F59E /* Exceptions for "Repoto" folder in "RepotoClip" target */,
 			);
 			path = Repoto;
 			sourceTree = "<group>";
@@ -74,6 +115,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8418C1E52D52463C0026F59E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8458C3212D39436100382227 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,26 +149,42 @@
 		8458C31B2D39436100382227 = {
 			isa = PBXGroup;
 			children = (
-				8458C3252D39436100382227 /* Products */,
+				8418C1E92D52463C0026F59E /* RepotoClip */,
 				8458C3262D39436100382227 /* Repoto */,
 				8458C3392D39436300382227 /* RepotoTests */,
 				8458C3432D39436300382227 /* RepotoUITests */,
+				84F107102DD0E01800B62839 /* RepotoClip.app */,
+				84F107112DD0E01800B62839 /* Repoto.app */,
+				84F107122DD0E01800B62839 /* RepotoTests.xctest */,
+				84F107132DD0E01800B62839 /* RepotoUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		8458C3252D39436100382227 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8458C3242D39436100382227 /* Repoto.app */,
-				8458C3362D39436300382227 /* RepotoTests.xctest */,
-				8458C3402D39436300382227 /* RepotoUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8418C1E72D52463C0026F59E /* RepotoClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8418C1F92D52463D0026F59E /* Build configuration list for PBXNativeTarget "RepotoClip" */;
+			buildPhases = (
+				8418C1E42D52463C0026F59E /* Sources */,
+				8418C1E52D52463C0026F59E /* Frameworks */,
+				8418C1E62D52463C0026F59E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8418C1E92D52463C0026F59E /* RepotoClip */,
+			);
+			name = RepotoClip;
+			packageProductDependencies = (
+			);
+			productName = RepotoClip;
+			productReference = 84F107102DD0E01800B62839 /* RepotoClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		8458C3232D39436100382227 /* Repoto */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8458C34A2D39436300382227 /* Build configuration list for PBXNativeTarget "Repoto" */;
@@ -133,6 +197,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8418C1F62D52463D0026F59E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8458C3262D39436100382227 /* Repoto */,
@@ -141,7 +206,7 @@
 			packageProductDependencies = (
 			);
 			productName = Repoto;
-			productReference = 8458C3242D39436100382227 /* Repoto.app */;
+			productReference = 84F107112DD0E01800B62839 /* Repoto.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8458C3352D39436300382227 /* RepotoTests */ = {
@@ -164,7 +229,7 @@
 			packageProductDependencies = (
 			);
 			productName = RepotoTests;
-			productReference = 8458C3362D39436300382227 /* RepotoTests.xctest */;
+			productReference = 84F107122DD0E01800B62839 /* RepotoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8458C33F2D39436300382227 /* RepotoUITests */ = {
@@ -187,7 +252,7 @@
 			packageProductDependencies = (
 			);
 			productName = RepotoUITests;
-			productReference = 8458C3402D39436300382227 /* RepotoUITests.xctest */;
+			productReference = 84F107132DD0E01800B62839 /* RepotoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -200,6 +265,9 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					8418C1E72D52463C0026F59E = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					8458C3232D39436100382227 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -224,18 +292,26 @@
 			mainGroup = 8458C31B2D39436100382227;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8458C3252D39436100382227 /* Products */;
+			productRefGroup = 8458C31B2D39436100382227;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8458C3232D39436100382227 /* Repoto */,
 				8458C3352D39436300382227 /* RepotoTests */,
 				8458C33F2D39436300382227 /* RepotoUITests */,
+				8418C1E72D52463C0026F59E /* RepotoClip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8418C1E62D52463C0026F59E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8458C3222D39436100382227 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +336,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8418C1E42D52463C0026F59E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8458C3202D39436100382227 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +367,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8418C1F62D52463D0026F59E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8418C1E72D52463C0026F59E /* RepotoClip */;
+			targetProxy = 8418C1F52D52463D0026F59E /* PBXContainerItemProxy */;
+		};
 		8458C3382D39436300382227 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8458C3232D39436100382227 /* Repoto */;
@@ -297,6 +385,72 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8418C1FA2D52463D0026F59E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RepotoClip/RepotoClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RepotoClip/Preview Content\"";
+				DEVELOPMENT_TEAM = MCADUG6F79;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RepotoClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Repoto;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ADA.NC2.Repoto.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8418C1FB2D52463D0026F59E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RepotoClip/RepotoClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RepotoClip/Preview Content\"";
+				DEVELOPMENT_TEAM = MCADUG6F79;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RepotoClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Repoto;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ADA.NC2.Repoto.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8458C3482D39436300382227 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,6 +709,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8418C1F92D52463D0026F59E /* Build configuration list for PBXNativeTarget "RepotoClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8418C1FA2D52463D0026F59E /* Debug */,
+				8418C1FB2D52463D0026F59E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8458C31F2D39436100382227 /* Build configuration list for PBXProject "Repoto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

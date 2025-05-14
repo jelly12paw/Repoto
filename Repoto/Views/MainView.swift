@@ -23,6 +23,9 @@ struct MainView: View {
             .navigationDestination(item: $manager.selectedLocation) { location in
                 ReportView()
                     .navigationTitle(locationTitle[location] ?? "")
+                    .onDisappear {
+                        manager.resetDatas()
+                    }
             }
         }
     }
